@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .antMatcher("/**")
                 .authorizeRequests()
-                .antMatchers("/", "/connect/linkedin")
+                .antMatchers("/", "/connect/facebook")
                 .permitAll();
     }
 }

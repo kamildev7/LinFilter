@@ -1,6 +1,6 @@
 /* common */
 .background__color--blue {
-    background-color: #29608e;
+    background-color: #3b5998;
 }
 
 .text__color--grey {
@@ -23,8 +23,8 @@
     margin: 0;
 }
 
-.padding__left--5 {
-    padding-left: 5px;
+.padding__left--10 {
+    padding-left: 10px;
 }
 
 body {
@@ -50,7 +50,7 @@ a {
     text-decoration: none;
 }
 
-/* linkedinConnect.html */
+/* facebookConnect.html */
 
 .btn-social:hover {
     color: #ffffff;
@@ -85,33 +85,36 @@ a {
 .profile-header {
     position: fixed;
     padding: 15px 30px;
-    padding-right: 30px;
-}
-
-.profile-info {
-    display: inline-block;
-    vertical-align: top;
 }
 
 .profile-picture {
+    position: relative;
     display: inline-block;
+    overflow: hidden;
     width: 54px;
     height: 54px;
 }
 
-.profile-info p {
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 0.75em;
+.profile-picture img {
+    position: absolute;
+    height: 54px;
+    right: 0;
+    bottom: 0;
 }
 
-.linkedin-logo {
+.profile-header h3 {
     position: absolute;
-    top: 31px;
+    display: inline-block;
+    top: 33px;
+}
+
+.facebook-logo {
+    position: absolute;
+    top: 26px;
     right: 30px;
     display: inline-block;
     background: url(../images/logo-white-54.png) no-repeat;
     background-size: contain;
     width: 34px;
-    height: 29px;
+    height: 34px;
 }

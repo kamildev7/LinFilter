@@ -3,17 +3,17 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html charset=UTF-8"/>
     <title>LinFilter</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
     <header class="profile-header background__color--blue position__left--0 position__right--0 position__top--0">
-        <img class="profile-picture" th:src="${linkedinProfile.profilePictureUrl}" rel="" />
-        <div class="profile-info">
-            <h3 class="text__color--grey margin--0 padding__left--5"
-                th:text="${linkedinProfile.firstName} + ' ' + ${linkedinProfile.lastName}"></h3>
-            <p class="text__color--grey padding__left--5" th:text="${linkedinProfile.headline}"></p>
+        <div class="profile-picture">e1e1e1
+            <img th:src="'https://graph.facebook.com/' + ${id} + '/picture?type=normal'" rel="" />
         </div>
-        <a title="Open in LinkedIn" target="_blank" class="linkedin-logo" th:href="${linkedinProfile.publicProfileUrl}"></a>
+        <h3 class="text__color--grey margin--0 padding__left--10" th:text="${firstName} + ' ' + ${lastName}"></h3>
+        <a title="Open in Facebook" target="_blank" class="facebook-logo" ></a>
     </header>
+    <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
