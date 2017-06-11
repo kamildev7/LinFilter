@@ -1,6 +1,30 @@
-/* Bootstrap social buttons */
-.btn-social:hover {
-    color: #ffffff;
+/* common */
+.background__color--blue {
+    background-color: #29608e;
+}
+
+.text__color--grey {
+    color: #e1e1e1;
+}
+
+.position__top--0 {
+    top: 0;
+}
+
+.position__left--0 {
+    left: 0;
+}
+
+.position__right--0 {
+    right: 0;
+}
+
+.margin--0 {
+    margin: 0;
+}
+
+.padding__left--5 {
+    padding-left: 5px;
 }
 
 body {
@@ -10,22 +34,32 @@ body {
 h1 {
     font-family: "Dosis", sans-serif;
     font-weight: bold;
-    color: #e1e1e1;
+}
+
+h3 {
+    font-family: "Dosis", sans-serif;
+    font-weight: normal;
 }
 
 p {
     font-family: "Dosis", sans-serif;
     font-weight: lighter;
-    color: #e1e1e1;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* linkedinConnect.html */
+
+.btn-social:hover {
+    color: #ffffff;
 }
 
 .top-header {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 200px;
-    background-color: #29608e;
     text-align: center;
 }
 
@@ -45,4 +79,39 @@ p {
 .col-centered {
     display: inline-block;
     float: none;
+}
+
+/* index.html */
+.profile-header {
+    position: fixed;
+    padding: 15px 30px;
+    padding-right: 30px;
+}
+
+.profile-info {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.profile-picture {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+}
+
+.profile-info p {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 0.75em;
+}
+
+.linkedin-logo {
+    position: absolute;
+    top: 31px;
+    right: 30px;
+    display: inline-block;
+    background: url(../images/logo-white-54.png) no-repeat;
+    background-size: contain;
+    width: 34px;
+    height: 29px;
 }

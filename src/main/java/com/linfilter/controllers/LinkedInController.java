@@ -1,11 +1,14 @@
 package com.linfilter.controllers;
 
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.linkedin.api.LinkedIn;
+import org.springframework.social.linkedin.api.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
