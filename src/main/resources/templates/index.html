@@ -14,6 +14,21 @@
         <h3 class="text__color--grey margin--0 padding__left--10" th:text="${firstName} + ' ' + ${lastName}"></h3>
         <a title="Open in Facebook" target="_blank" class="facebook-logo" ></a>
     </header>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="col-md-3" th:each="post:${feed}">
+                <div class="facebook-post">
+                    <div class="background__color--blue">
+                        <h4 class="text__color--grey" th:text="${post.from.name} + ' wrote:'"></h4>
+                    </div>
+                    <div>
+                        <img th:if="${post.picture}" th:src="${post.picture}" />
+                        <p class="text__color--blue" th:text="${post.message}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </body>
 </html>
