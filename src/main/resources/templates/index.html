@@ -8,27 +8,42 @@
 </head>
 <body>
     <header class="profile-header background__color--blue position__left--0 position__right--0 position__top--0">
-        <div class="profile-picture">e1e1e1
+        <div class="profile-picture">
             <img th:src="'https://graph.facebook.com/' + ${id} + '/picture?type=normal'" rel="" />
         </div>
         <h3 class="text__color--grey margin--0 padding__left--10" th:text="${firstName} + ' ' + ${lastName}"></h3>
-        <a title="Open in Facebook" target="_blank" class="facebook-logo" ></a>
+        <a title="Open in Facebook" target="_blank" class="facebook-logo" th:href="'https://facebook.com/' + ${id}"></a>
     </header>
-    <div class="content">
-        <div class="container-fluid">
-            <div class="col-md-3" th:each="post:${feed}">
-                <div class="facebook-post">
-                    <div class="background__color--blue">
-                        <h4 class="text__color--grey" th:text="${post.from.name} + ' wrote:'"></h4>
-                    </div>
-                    <div>
-                        <img th:if="${post.picture}" th:src="${post.picture}" />
-                        <p class="text__color--blue" th:text="${post.message}"></p>
+    <div class="content padding__left--340">
+        <div class="posts container-fluid">
+            <div class="row">
+                <div class="col-sizer col-xs-6 col-sm-4 col-md-3"></div>
+                <div class="col-facebook-post col-xs-6 col-sm-4 col-md-3" th:each="post:${feed}">
+                    <div class="facebook-post">
+                        <div class="background__color--blue">
+                            <div class="profile-picture">
+                                <img th:src="'https://graph.facebook.com/' + ${post.from.id} + '/picture?type=large'" rel="" />
+                            </div>
+                            <div class="post-info">
+                                <h4 class="text__color--grey" th:text="${post.from.name}"></h4>
+                                <p class="text__color--grey" th:text="${#dates.format(post.createdTime, 'dd.MM.yyyy HH:mm')}"></p>
+                            </div>
+                        </div>
+                        <div>
+                            <img th:if="${post.picture}" th:src="${post.picture}" rel="" />
+                            <p class="text__color--blue" th:text="${post.message}"></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div>
+        </div>
     </div>
+    <script type="text/javascript" src="/webjars/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" th:src="@{https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js}"></script>
+    <script type="text/javascript" th:src="@{https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js}"></script>
+    <script type="text/javascript" src="../static/js/feedfilter.js" th:src="@{/js/feedfilter.js}"></script>
 </body>
 </html>

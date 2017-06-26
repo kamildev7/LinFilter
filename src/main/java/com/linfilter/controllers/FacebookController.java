@@ -1,14 +1,13 @@
 package com.linfilter.controllers;
 
 import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.facebook.api.Facebook;
-import org.springframework.social.facebook.api.PagedList;
-import org.springframework.social.facebook.api.Post;
-import org.springframework.social.facebook.api.User;
+import org.springframework.social.facebook.api.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Date;
 
 @Controller
 @RequestMapping("/")
@@ -33,7 +32,9 @@ public class FacebookController {
         model.addAttribute("firstName", user.getFirstName());
         model.addAttribute("lastName", user.getLastName());
 
-        model.addAttribute("feed", facebook.feedOperations().getFeed());
+        model.addAttribute("feed", facebook.feedOperations().getFeed(
+                new PagingParameters(70, 0, null, new Date().getTime())
+        ));
         return "index";
     }
 }
