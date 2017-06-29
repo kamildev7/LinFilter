@@ -6,7 +6,6 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@PropertySource(value = { "application.properties", "application.confidential.properties" })
 public class MainappApplication {
 
 	public static void main(String[] args) {
